@@ -21,8 +21,6 @@ pv = 1
 
 uci_s = {'name': 'MarcoEngine 4.2', 'author': 'Mark Kim', 'hash': 256, 'MultiPV': 1} # uci protocol
 
-# max rating is 4132
-
 print(f'''{Fore.LIGHTYELLOW_EX}
                    ______            
         |\    /|   |       |\   |    ______   ---|---  |\  |  |----
