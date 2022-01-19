@@ -9,9 +9,4 @@ Marco Engine is an interesting neural chess network that uses a self-learning me
 The goal of the **MarcoEngine** project is to create new self-learning algorithms. After that, on the scales that we get, we can make an almost perfect game for all possible moves.
 
 #  UCI
-At the moment, unfortunately, most of the *UCI protocol* is not implemented. Currently only supported:
-
-``
-Hash (default 256)
-MultiPV (default 1)
-``
+At the moment, unfortunately, most of the *UCI protocol* is not implemented. Currently only supported ``Hash`` and ``MultiPV``.
