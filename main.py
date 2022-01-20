@@ -13,13 +13,14 @@ import re
 
 board = chess.Board()
 engine = chess.engine.SimpleEngine.popen_uci(r'stockfish')
-g = 0
+g = 3
 wtime = 100
 btime = 100
 dobavka = 0
 pv = 1
 
-uci_s = {'name': 'MarcoEngine 4.2', 'author': 'Mark Kim', 'hash': 256, 'MultiPV': 1} # uci protocol
+uci_s = {'name': 'MarcoEngine 4.2', 'author': 'Mark Kim', 'hash': 256, 'MultiPV': 1,
+         'Move Overhead': 50} # uci protocol
 
 print(f'''{Fore.LIGHTYELLOW_EX}
                    ______            
@@ -76,16 +77,16 @@ if sys.argv == ['main.py']:
             else:
                 if board.turn:
 
-                    rs = ssw.bestmove(engine=engine, board=board, wtime=wtime, btime=btime, dobavka=dobavka,
-                                      multipv=pv, move='W')
+                    rs = ssw.bestmove(engine=engine, board=board, wtime=wtime, btime=btime,
+                                      moveoverhead=uci_s['Move Overhead'], multipv=pv, move='W')
                     print('bestmove ' + str(rs[0]), flush=True)
 
                     wtime = rs[1]
                     wtime += dobavka
 
                 else:
-                    rs = ssw.bestmove(engine=engine, board=board, wtime=wtime, btime=btime, dobavka=dobavka,
-                                      multipv=pv, move='B')
+                    rs = ssw.bestmove(engine=engine, board=board, wtime=wtime, btime=btime,
+                                      moveoverhead=uci_s['Move Overhead'], multipv=pv, move='B')
                     print('bestmove ' + str(rs[0]), flush=True)
 
 
@@ -107,6 +108,9 @@ if sys.argv == ['main.py']:
 
              elif uc[2] == 'MultiPV':
                 uci_s['MultiPV'] = int(uc[4])
+
+             elif uc[2] == 'Move Overhead':
+                uci_s['Move Overhead'] = int(uc[4])
 
         elif userCommand.startswith('position fen'):
              uc = userCommand.split()
@@ -201,14 +205,18 @@ elif func == 'go':
     else:
         if board.turn:
 
-            rs = ssw.bestmove(engine=engine, board=board, wtime=wtime, btime=btime, dobavka=dobavka, move='W')
+            rs = ssw.bestmove(engine=engine, board=board, wtime=wtime, btime=btime,
+                              multipv=uci_s['MultiPV'], moveoverhead=uci_s['Move Overhead'],
+                              move='W')
             print('bestmove ' + str(rs[0]), flush=True)
 
             wtime = rs[1]
             wtime += dobavka
 
         else:
-            rs = ssw.bestmove(engine=engine, board=board, wtime=wtime, btime=btime, dobavka=dobavka, move='B')
+            rs = ssw.bestmove(engine=engine, board=board, wtime=wtime, btime=btime,
+                              multipv=uci_s['MultiPV'], moveoverhead=uci_s['Move Overhead'],
+                              move='B')
             print('bestmove ' + str(rs[0]), flush=True)
 
             btime = rs[1]
@@ -226,6 +234,11 @@ elif func.startswith('setoption name'):
 
     elif uc[2] == 'MultiPV':
         pv = int(uc[4])
+        uci_s['MultiPV'] = pv
+        
+    elif uc[2] == 'Move Overhead':
+        mo = int(uc[4])
+        uci_s['Move Overhead'] = mo
 
 elif func.startswith('position fen'):
     uc = func.split()
