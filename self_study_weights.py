@@ -5,14 +5,6 @@ from time import perf_counter
 import chess
 import chess.engine
 
-def calculate_depth(wtime, btime, dobavka, mode):
-    if mode == 'classic':
-        return ((wtime + btime) + dobavka) // 5
-
-    elif mode == 'bullet':
-        return ((wtime + btime) + dobavka) // 11
-
-
 def configure_weights(engine, board):
     weights = open('./weights.txt', 'a')
     weights_f = open('./weights_fen.txt', 'a')
@@ -167,15 +159,14 @@ def self_study_with_weights(engine, board,
 
         return rating-1000
 
-def bestmove(engine, board, wtime, btime, dobavka, multipv, move):
-    # calculating depth
-    depth = calculate_depth(wtime=wtime, btime=btime, dobavka=dobavka, mode='bullet')
-    print(depth)
+def bestmove(engine, board, wtime, btime, multipv, move, moveoverhead):
 
     start_time = perf_counter()
 
-    info = engine.analyse(board, chess.engine.Limit(depth=depth))
-    result = engine.play(board, chess.engine.Limit(depth=depth))
+    MoveOverhead = float(f'0.{moveoverhead}')
+
+    info = engine.analyse(board, chess.engine.Limit(time=MoveOverhead))
+    result = engine.play(board, chess.engine.Limit(time=MoveOverhead))
 
     info['multipv'] = multipv
 
@@ -191,8 +182,10 @@ def bestmove(engine, board, wtime, btime, dobavka, multipv, move):
 
     if result.move in weights_:
         d += 5
-        info = engine.analyse(board, chess.engine.Limit(depth=depth + d))
-        result = engine.play(board, chess.engine.Limit(depth=depth + d))
+        info = engine.analyse(board, chess.engine.Limit(time=MoveOverhead))
+        result = engine.play(board, chess.engine.Limit(time=MoveOverhead))
+
+        info['multipv'] = multipv
 
         end = perf_counter()
 
