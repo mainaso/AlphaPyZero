@@ -4,5 +4,5 @@
 
 # Objective of the project
 
-The goal of the **MarcoEngine** project is to create new self-learning algorithms. After that, on the scales that we get, we can make an almost perfect game for all possible moves.
+The goal of the **MarcoEngine** project is to create new self-learning algorithms. After that, on the weights that we get, we can make an almost perfect game for all possible moves.
 
