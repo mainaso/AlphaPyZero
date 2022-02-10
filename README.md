@@ -5,7 +5,17 @@
 *Marco Engine* - Marco Engine is an interesting neural chess network that uses a self-learning method (achieving a good game by trying out mistakes). Technically, his rating is **3320**. Although, we are sure that this is not the maximum rating.
 
 
-#  🚗Start engine
+# Installation
+
+First, install the required *libraries*:
+
+```
+pip install -r requirements.txt
+```
+
+Wait for the modules to be installed. Now, you need to set the weights. You can find out more about this in the __Where I can download weights?__ section.
+
+# 🚗 Start engine
 
 To run the engine, you must have weights. If you don't have weights, you can create a `weights_norm.json` file in the __weights__ folder. After that, go to the main directory of the project, then write the command:
 
