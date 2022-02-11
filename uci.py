@@ -4,7 +4,7 @@ import sys
 
 from engine import Engine
 import chess
-from train import print_l, new_board
+from utils import *
 
 weights = []
 
@@ -103,7 +103,7 @@ def uci_sys_comander(sys_argv, command, other):
 		else:
 			print_l(f'[?] Unkown command: {command}')
 
-if sys.argv == ['uci.py']:
+if sys.argv == ['uci.py'] or sys.argv == './uci.bin' or sys.argv == ['./marcoengine.bon']:
 
 
 	while True:
@@ -111,10 +111,17 @@ if sys.argv == ['uci.py']:
 		uci_commander(com)
 
 else:
-	func = sys.argv[1]
-	sys_argv = sys.argv[1:]
-	try:
-		other = sys.argv[2]
-		uci_sys_comander(command=func, other=other, sys_argv=sys_argv)
-	except:
-		uci_sys_comander(command=func, other=None, sys_argv=sys_argv)
+        
+        sys_argv = sys.argv[1:]
+
+        try:
+                func = sys.argv[1]
+
+        except:
+                pass
+        
+        try:
+                other = sys.argv[2]
+                uci_sys_comander(command=func, other=other, sys_argv=sys_argv)
+        except:
+                uci_sys_comander(command=func, other=None, sys_argv=sys_argv)
