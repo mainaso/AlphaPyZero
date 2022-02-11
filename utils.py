@@ -1,4 +1,5 @@
 import logging
+import random
 
 import chess
 
@@ -28,3 +29,12 @@ def get_key(d, value):
         if v == value:
             return k
 
+def calculate_time(wtime, btime, depth):
+    if wtime <= 1000 and btime >= 1000:
+        return "0.{}".format(int(depth // 4))
+        
+    elif wtime <= 1000 and btime <= 1000:
+        return "0.".format(int(depth // random.randint(3, 5)))
+    
+    else:
+        return "0.".format(int(depth // random.randint(5, 9)))
