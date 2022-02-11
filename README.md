@@ -28,6 +28,16 @@ After that, wait the amount of time you need, and turn off the program. Congratu
 ```
 python3 uci.py [uci-commad](not necessary)
 ```
+# 🏗️ I want to build engine
+If you need to compile the engine, you can use the __build.sh__ file. Just type in terminal:
+
+```
+bash build.sh
+```
+
+Then wait, and everything will be ready.
+
+*IMPORTANT!!! The compilation is not yet fully tested, and there may be interruptions in work, for which we apologize ...*
 
 # 🖥️ Where I can download weights?
 You can get the weights in two ways: 1. Download from one of the releases of __MarcoEngine__ (they will be in this repository), then transfer the weights file to the `weights` folder. Next, read the text under the heading __Start engine__ to understand how to start the engine. Method 2: train a neural network on a computer. If you want to generate weights directly on your computer, you can enter the command:
