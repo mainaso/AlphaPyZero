@@ -59,6 +59,7 @@ __MarcoEngine__ uses the usual self-learning algorithms of a chess neural networ
 Command | go | uciok(AKA: uci) | ucinewgame | position fen | position startpos moves | isready | quit | 
 --- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
 Using | go | uciok | ucinewgame | position fen [fen] | position startpos moves [moves] | isready | quit | 
+--- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
 What is it? | For analyse position | For get information about(WIP) | For create new game | For create new board with fen | For create new board with maked moves | Hey! MEngine! You ready? | For exit | 
 
 
