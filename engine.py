@@ -1,16 +1,12 @@
-import logging
 import json
 
-import chess
 import chess.engine
-from train import analyze, analyze_without_score, best_move, get_key
+
+from train import analyze, best_move
+from utils import *
 
 logger = logging.getLogger("MarcoEngineTraining")  
 board = chess.Board()
-
-# utils
-def print_l(msg):
-	logger.info(msg)
 
 # engine
 class Engine:
@@ -38,9 +34,11 @@ class Engine:
 					print(str(result))
 					print('\n'*3)
 
+				return result.move
+
 
 		elif not depth is None:
-			print(list(self.weights.values()) + ' weights loaded!')
+			print(str(list(self.weights.values())) + ' weights loaded!')
 
 			for deep in range(0, depth + 1):
 				info = analyze(self.engine, board, deep)
@@ -59,6 +57,8 @@ class Engine:
 					print(str(info) + f' {deep} depth')
 					print(str(result))
 					print('\n'*3)
+
+				return result.move
 
 
 			self.engine.quit()
