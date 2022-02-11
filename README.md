@@ -56,11 +56,11 @@ Then wait some time for the training program to reach at least the first stage o
 __MarcoEngine__ uses the usual self-learning algorithms of a chess neural network: it simply learns from its mistakes. That is why you should not deform the `game[number].json` files, which contain the game on which the engine will be trained.
 
 # UCI
-Command | go | uciok(AKA: uci) | ucinewgame | position fen | position startpos moves | isready | quit | 
+Command | go | uciok(AKA: uci) | ucinewgame | position fen | position startpos moves | isready | quit 
 --- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-Using | go | uciok | ucinewgame | position fen [fen] | position startpos moves [moves] | isready | quit | 
+Using | go | uciok | ucinewgame | position fen [fen] | position startpos moves [moves] | isready | quit 
 --- | --- | --- | --- |--- |--- |--- |--- |--- |--- |--- |---
-What is it? | For analyse position | For get information about(WIP) | For create new game | For create new board with fen | For create new board with maked moves | Hey! MEngine! You ready? | For exit | 
+What is it? | For analyse position | For get information about(WIP) | For create new game | For create new board with fen | For create new board with maked moves | Hey! MEngine! You ready? | For exit 
 
 
 # 😄 Can I support project?
