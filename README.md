@@ -2,19 +2,16 @@
 
 # MarcoEngine(WIP)
 ```
-                                                                        
-    /|    //| |                                        //   / /         
-   //|   // | |     ___      __      ___      ___     //____      __    
-  // |  //  | |   //   ) ) //  ) ) //   ) ) //   ) ) / ____    //   ) ) 
- //  | //   | |  //   / / //      //       //   / / //        //   / /  
-//   |//    | | ((___( ( //      ((____   ((___/ / //____/ / //   / /   
-                                
-                                
-                                
-   ___     ( )   __      ___    
- //   ) ) / / //   ) ) //___) ) 
-((___/ / / / //   / / //        
- //__   / / //   / / ((____     
+
+_________________________________________________
+7        77     77     77     77  77     77     7
+|  _  _  ||  ___!|  _  ||   __!|  ||  _  ||  ___!
+|  7  7  ||  __|_|  7  ||  !  7|  ||  7  ||  __|_
+|  |  |  ||     7|  |  ||     ||  ||  |  ||     7
+!__!__!__!!_____!!__!__!!_____!!__!!__!__!!_____!
+                                                 
+
+    
 ```
 
 *Marco Engine* - Marco Engine is an interesting neural chess network that uses a self-learning method (achieving a good game by trying out mistakes). Technically, his rating is **3320**. Although, we are sure that this is not the maximum rating.
