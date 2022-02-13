@@ -2,6 +2,10 @@
 
 # MarcoEngine(WIP)
 
+* [Introduction](# Installation)
+* [Walkthrough](#🚗 Start engine)
+
+
 *Marco Engine* - Marco Engine is an interesting neural chess network that uses a self-learning method (achieving a good game by trying out mistakes). Technically, his rating is **3320**. Although, we are sure that this is not the maximum rating.
 
 
