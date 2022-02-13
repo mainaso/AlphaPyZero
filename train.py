@@ -218,7 +218,7 @@ def results_print(results_dict):
 
     table.add_column("Played games", justify="right", style="cyan", no_wrap=True)
     table.add_column("Wins white", style="magenta")
-    table.add_column("Loses white", style="magenta")
+    table.add_column("Losses white", style="magenta")
     table.add_column("Draws", style="magenta")
 
     table.add_row(str(len(results_dict.keys())), str(wins_w), str(wins_b), str(draws))
