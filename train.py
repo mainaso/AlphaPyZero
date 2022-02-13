@@ -148,7 +148,7 @@ def create_new_move(filename):
             # generating new move
             move = best_move(engine=engine, board=board, depth=20)
 
-            fens.append(str(board.fen))
+            fens.append(str(board.fen()))
             dict_moves.append(str(move))
             dict_keys.append(str(key))
 
@@ -158,7 +158,7 @@ def create_new_move(filename):
 
             board.push(move)
 
-            fens.append(str(board.fen))
+            fens.append(str(board.fen()))
             dict_moves.append(str(move))
             dict_keys.append(str(key))
 
@@ -203,13 +203,13 @@ def results_print(results_dict):
     wins_b = 0
 
     for result in list(results_dict.keys()):
-        if result == "1/2-1/2":
+        if "1/2-1/2" in result:
             draws += 1
 
-        elif result == "1-0":
+        elif  "1-0" in result:
             wins_w += 1
 
-        elif result == "0-1":
+        elif "0-1" in result:
             wins_b += 1
 
     print('\n'*2)
@@ -258,7 +258,7 @@ if __name__ == '__main__':
         resul = start(engine=engine)
         engine.quit()
 
-        results_dictionary[str(resul)] = " "
+        results_dictionary[str(count_g) + str(resul)] = " "
 
         with open('./games/results.json', "w") as results_diictionary:
             json.dump(results_dictionary, results_diictionary)
