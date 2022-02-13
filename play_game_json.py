@@ -1,14 +1,15 @@
 import json
+import sys
 
 import chess
+
 
 def play(filename):
 	if filename.endswith('.json'):
 		game = json.load(open(filename, 'r'))
 
-
 	else:
-		game = json.load(open(filename + '.json', 'r'))
+		game = json.load(open('r', filename + '.json'))
 
 	game_keys = game.keys()
 
@@ -21,7 +22,8 @@ def play(filename):
 			print(key)
 			print('\n'*3)
 
-	except:
-		pass
+	finally:
+		print()
 
-play('./weights/weights_norm.json')
+
+play(sys.argv[1])
