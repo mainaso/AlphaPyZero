@@ -1,10 +1,21 @@
 [![Gitter](https://badges.gitter.im/DroidGame/DroidGame3D.svg)](https://gitter.im/WennMarcoRTX/MarcoEngine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge) 
 
 # MarcoEngine(WIP)
-
-* [Introduction](# Installation)
-* [Walkthrough](#🚗 Start engine)
-    + [ 🏗️ I want to build engine](# 🏗️ I want to build engine)
+```
+                                                                        
+    /|    //| |                                        //   / /         
+   //|   // | |     ___      __      ___      ___     //____      __    
+  // |  //  | |   //   ) ) //  ) ) //   ) ) //   ) ) / ____    //   ) ) 
+ //  | //   | |  //   / / //      //       //   / / //        //   / /  
+//   |//    | | ((___( ( //      ((____   ((___/ / //____/ / //   / /   
+                                
+                                
+                                
+   ___     ( )   __      ___    
+ //   ) ) / / //   ) ) //___) ) 
+((___/ / / / //   / / //        
+ //__   / / //   / / ((____     
+```
 
 *Marco Engine* - Marco Engine is an interesting neural chess network that uses a self-learning method (achieving a good game by trying out mistakes). Technically, his rating is **3320**. Although, we are sure that this is not the maximum rating.
 
