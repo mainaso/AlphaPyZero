@@ -258,7 +258,7 @@ if __name__ == '__main__':
         resul = start(engine=engine)
         engine.quit()
 
-        results_dictionary[str(count_g) + str(resul)] = " "
+        results_dictionary[str(count_g) + " " + str(resul)] = " "
 
         with open('./games/results.json', "w") as results_diictionary:
             json.dump(results_dictionary, results_diictionary)
