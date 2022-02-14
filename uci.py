@@ -5,6 +5,10 @@ import sys
 from engine import Engine
 import chess
 from utils import *
+from colorama import init, Fore
+from chess import Move
+
+init(autoreset=True)
 
 weights = []
 
@@ -12,6 +16,20 @@ board = chess.Board()
 engine = Engine("stockfish", "./weights/weights_norm.json")
 uci_conf = json.load(open('./settings/uci_config.json', 'r'))
 uci_conf2 = json.load(open('./settings/conf.json', 'r'))
+
+def show_intro():
+	intro = Fore.GREEN + f""" _______ _______               __              
+|   |   |    ___|.-----.-----.|__|.-----.-----.
+|       |    ___||     |  _  ||  ||     |  -__|
+|__|_|__|_______||__|__|___  ||__||__|__|_____|
+                       |_____|      
+-----------------------------------------------
+{Fore.MAGENTA} MarcoEngine by Mark Kim. {Fore.LIGHTRED_EX} Neural chess network.  
+                       """
+
+
+
+	print(intro)
 
 def finding_weights():
 	for f in os.listdir("./weights"):
@@ -103,25 +121,32 @@ def uci_sys_comander(sys_argv, command, other):
 		else:
 			print_l(f'[?] Unkown command: {command}')
 
-if sys.argv == ['uci.py'] or sys.argv == './uci.bin' or sys.argv == ['./marcoengine.bon']:
 
+if sys.argv == ['uci.py'] or sys.argv == ['./uci.bin'] or sys.argv == ['./marcoengine.bon']:
+	show_intro()
 
 	while True:
 		com = input()
 		uci_commander(com)
 
 else:
-        
-        sys_argv = sys.argv[1:]
+	show_intro()
 
-        try:
-                func = sys.argv[1]
+	sys_argv = sys.argv[1:]
 
-        except:
-                pass
-        
-        try:
-                other = sys.argv[2]
-                uci_sys_comander(command=func, other=other, sys_argv=sys_argv)
-        except:
-                uci_sys_comander(command=func, other=None, sys_argv=sys_argv)
+	try:
+		func = sys.argv[1]
+
+	except:
+		pass
+
+	try:
+		show_intro()
+
+		other = sys.argv[2]
+		uci_sys_comander(command=func, other=other, sys_argv=sys_argv)
+
+	except:
+		show_intro()
+
+		uci_sys_comander(command=func, other=None, sys_argv=sys_argv)
