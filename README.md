@@ -22,7 +22,7 @@ ___!__!__!__!!_____!!__!__!!_____!!__!!__!__!!_____!
 
 First, install the required *libraries*:
 
-```
+```bash
 pip install -r requirements.txt
 ```
 
@@ -32,19 +32,20 @@ Wait for the modules to be installed. Now, you need to set the weights. You can 
 
 To run the engine, you must have weights. If you don't have weights, you can create a `weights_norm.json` file in the __weights__ folder. After that, go to the main directory of the project, then write the command:
 
-```
+```bash
 python3 train.py
 ```
 
 After that, wait the amount of time you need, and turn off the program. Congratulations! You now have a working __MarcoEngine__ in your hands. Time to test it. The engine supports a small part of the __UCI__ protocol, but this is enough. To start the UCI shell:
 
-```
+```bash
 python3 uci.py [uci-commad](not necessary)
 ```
+
 # 🏗️ I want to build engine
 If you need to compile the engine, you can use the __build.sh__ file. Just type in terminal:
 
-```
+```bash
 bash build.sh
 ```
 
@@ -58,7 +59,7 @@ You can get the weights in two ways:
 
 2. Method 2: train a neural network on a computer. If you want to generate weights directly on your computer, you can enter the command:
 
-```
+```bash
 python3 train.py
 ```
 
