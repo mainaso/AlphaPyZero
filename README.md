@@ -22,9 +22,9 @@ ___!__!__!__!!_____!!__!__!!_____!!__!!__!__!!_____!
 
 First, install the required *libraries*:
 
-`
+```py
 pip install -r requirements.txt
-`
+```
 
 Wait for the modules to be installed. Now, you need to set the weights. You can find out more about this in the __Where I can download weights?__ section.
 
