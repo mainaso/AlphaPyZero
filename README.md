@@ -22,7 +22,7 @@ ___!__!__!__!!_____!!__!__!!_____!!__!!__!__!!_____!
 
 First, install the required *libraries*:
 
-```py
+```
 pip install -r requirements.txt
 ```
 
