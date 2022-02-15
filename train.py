@@ -29,6 +29,22 @@ results_dictionary = json.load(open("./games/results.json", "r"))
 games_count = train_conf['Games count']
 games_count_for_train = conf["Games Train Count"]
 
+# graphic
+def show_intro():
+    intro = Fore.RED + """                                                                      
+_|_|_|_|_|                      _|            _|                      
+    _|      _|  _|_|    _|_|_|      _|_|_|        _|_|_|      _|_|_|  
+    _|      _|_|      _|    _|  _|  _|    _|  _|  _|    _|  _|    _|  
+    _|      _|        _|    _|  _|  _|    _|  _|  _|    _|  _|    _|  
+    _|      _|          _|_|_|  _|  _|    _|  _|  _|    _|    _|_|_|  
+                                                                  _|  
+                                                              _|_|
+
+    ----------------------------------------------------------------
+                                                            """
+    
+    print(intro)
+
 # engine utils
 def analyze(engine, board, depth: int = None, limit: int = None):
     if depth is None and limit is None:
@@ -250,6 +266,8 @@ def start(engine):
 
 
 if __name__ == '__main__':
+    show_intro() # showing intro 
+    
     count_g = 0
 
     while not count_g >= games_count_for_train:
