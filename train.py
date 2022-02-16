@@ -55,7 +55,7 @@ def analyze_antijit(info, uci_conf):
     info['MultiPV'] = uci_conf['MultiPV']
 
 # engine utils
-@jit
+@jit(fastmath=True, parallel=True)
 def analyze(engine, board, depth: int = None, limit: int = None):
     if depth is None and limit is None:
         return
@@ -74,7 +74,7 @@ def analyze(engine, board, depth: int = None, limit: int = None):
 
         return info['score']
 
-@jit
+@jit(fastmath=True, parallel=True)
 def analyze_without_score(engine, board, depth: int = None, limit: int = None):
     if depth is None and limit is None:
         print_l('You want input depth or limit!')
