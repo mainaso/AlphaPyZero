@@ -12,7 +12,6 @@ import re
 import random
 import time
 import datetime
-from numba import jit
 
 from engine import *
 from utils import *
@@ -24,7 +23,7 @@ coloredlogs.install(level='INFO')
 logger = logging.getLogger("MarcoEngineTraining")
 
 logger_ = logging.getLogger("numba")
-logger_.setLevel(logging.ERROR)
+logger_.setLevel(logging.INFO)
 
 board = chess.Board()
 
@@ -45,7 +44,6 @@ _|_|_|_|_|                      _|            _|
     _|      _|          _|_|_|  _|  _|    _|  _|  _|    _|    _|_|_|  
                                                                   _|  
                                                               _|_|
-
     ----------------------------------------------------------------
                                                             """
 
@@ -57,7 +55,6 @@ def analyze_antijit(info, uci_conf):
     info['MultiPV'] = uci_conf['MultiPV']
 
 # engine utils
-@jit(fastmath=True, parallel=True)
 def analyze(engine, board, depth: int = None, limit: int = None):
     if depth is None and limit is None:
         return
@@ -76,7 +73,6 @@ def analyze(engine, board, depth: int = None, limit: int = None):
 
         return info['score']
 
-@jit(fastmath=True, parallel=True)
 def analyze_without_score(engine, board, depth: int = None, limit: int = None):
     if depth is None and limit is None:
         print_l('You want input depth or limit!')
@@ -278,5 +274,3 @@ if __name__ == '__main__':
             json.dump(results_dictionary, results_diictionary)
 
     results_print(results_dict=results_dictionary)
-
-
