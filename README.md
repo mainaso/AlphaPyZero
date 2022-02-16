@@ -1,17 +1,14 @@
+<div id="marcoengine-logo" align="center">
+    <br/>
+    <img src="./logo.png" alt="MarcoEngine Logo" width="512"/>
+    <h3>Python chess neural network</h3>
+</div>
+
+<div id="badges" align="center">
+
 [![Gitter](https://badges.gitter.im/DroidGame/DroidGame3D.svg)](https://gitter.im/WennMarcoRTX/MarcoEngine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge) 
 
-# MarcoEngine(WIP)
-
-
-```python
-____________________________________________________
-___7        77     77     77     77  77     77     7
-___|  _  _  ||  ___!|  _  ||   __!|  ||  _  ||  ___!
-___|  7  7  ||  __|_|  7  ||  !  7|  ||  7  ||  __|_
-___|  |  |  ||     7|  |  ||     ||  ||  |  ||     7
-___!__!__!__!!_____!!__!__!!_____!!__!!__!__!!_____!
-```                                              
-
+</div>
     
 
 
