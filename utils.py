@@ -6,7 +6,6 @@ import chess
 logger = logging.getLogger("MarcoEngineUtils")
 
 def print_l(msg):
-    print(msg)
     logger.info(msg)
 
 
