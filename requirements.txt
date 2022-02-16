@@ -3,4 +3,3 @@ colorama
 Nuitka
 rich
 coloredlogs
-numba
