@@ -1,7 +1,7 @@
 <div id="marcoengine-logo" align="center">
     <br/>
     <img src="./logo.png" alt="MarcoEngine Logo" width="512"/>
-    <h3>Python chess neural network</h3>
+    <h2>Python chess neural network</h2>
 </div>
 
 <div id="badges" align="center">
