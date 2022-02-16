@@ -2,4 +2,5 @@ chess
 colorama
 Nuitka
 rich
+coloredlogs
 numba
