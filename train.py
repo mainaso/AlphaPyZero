@@ -247,7 +247,7 @@ def start(engine):
 
     if not str(b.result()) == '*':
         print_l(
-            f'{Fore.GREEN} [+ {now.strftime("%d-%m-%Y %H:%M")}] Game completed, result: {b.result()}. Time elapsed: {elapsed}')
+            f'Game completed, result: {b.result()}. Time elapsed: {elapsed}')
 
     with open(path, "w") as write_file:
         json.dump(_dictionary, write_file)
@@ -256,7 +256,7 @@ def start(engine):
 
     now = datetime.datetime.now()
 
-    print_l(f'{Fore.GREEN} [+ {now.strftime("%d-%m-%Y %H:%M")}] Weights created. Time elapsed: {elapsed_new_move}')
+    print_l(f'Weights created. Time elapsed: {elapsed_new_move}')
 
     return b.result()
 
