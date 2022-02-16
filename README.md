@@ -73,7 +73,13 @@ Then wait some time for the training program to reach at least the first stage o
 
 # ⚙️ How does Marco Engine work?
 
-__MarcoEngine__ uses the usual self-learning algorithms of a chess neural network: it simply learns from its mistakes. That is why you should not deform the `game[number].json` files, which contain the game on which the engine will be trained.
+Marco Engine is a completely different engine from other chess neural networks. It doesn't use any neurons, synapses, or anything like that. This engine is very simple, from its side, when the program starts, it looks like this:
+
+1. Playing with yourself, writing the game in something like the __PGN__ format, but in *.json*: `{"move": "board fen"}`. After the game, it writes to the __results.json__ file (which is in the `games` directory) it writes the result of the game.
+
+2. After that, it starts in a loop through the keys of the *json* dictionary in which the game is recorded. He analyzes the positions, and then reveals whether that move was a good one or not. If it is good, it writes a move to the *json* dictionary, and the iteration starts again. Otherwise - it starts analyzes the position more and more deeply, trying to find a new move. After finding a new move, he compares the estimates, after which he already receives an answer - is the new move good or not. Here I think it's understandable, he writes down this move in the weights, and the iteration starts again.
+
+Very simple, but very productive. We improve our neural network almost every day, we hope that something good will come out.
 
 # 📝 MarcoEngine UCI-protocol
 | ***Command*** | go | uciok(AKA: uci) | ucinewgame | position fen [fen] | position startpos moves [moves] | isready | quit |
