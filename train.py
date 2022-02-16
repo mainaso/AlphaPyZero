@@ -6,6 +6,7 @@ from rich.console import Console
 from rich.table import Table
 
 import logging
+import coloredlogs
 import json
 import re
 import random
@@ -18,6 +19,7 @@ from utils import *
 
 init(autoreset=True)
 
+coloredlogs.install(level='INFO')
 
 logger = logging.getLogger("MarcoEngineTraining")
 
