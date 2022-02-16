@@ -78,6 +78,9 @@ def uci_commander(command):
 
     elif command.startswith('quit'):
         sys.exit(1)
+        
+    elif command == "":
+        pass
 
     else:
         print_l(f'[?] Unkown command: {command}')
@@ -127,6 +130,9 @@ def uci_sys_comander(sys_argv, command, other):
 
     elif command.startswith('quit'):
         sys.exit()
+        
+    elif command == "":
+        pass
 
     else:
         print_l(f'[?] Unkown command: {command}')
