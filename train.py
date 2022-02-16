@@ -11,6 +11,7 @@ import re
 import random
 import time
 import datetime
+from numba import jit
 
 from engine import *
 from utils import *
@@ -18,8 +19,11 @@ from utils import *
 init(autoreset=True)
 
 
-
 logger = logging.getLogger("MarcoEngineTraining")
+
+logger_ = logging.getLogger("numba")
+logger_.setLevel(logging.ERROR)
+
 board = chess.Board()
 
 uci_conf = json.load(open('./settings/uci_config.json', 'r'))
@@ -42,37 +46,35 @@ _|_|_|_|_|                      _|            _|
 
     ----------------------------------------------------------------
                                                             """
-    
+
     print(intro)
 
+# anti-jit-errors
+def analyze_antijit(info, uci_conf):
+    info['Hash'] = uci_conf['Hash']
+    info['MultiPV'] = uci_conf['MultiPV']
+
 # engine utils
+@jit
 def analyze(engine, board, depth: int = None, limit: int = None):
     if depth is None and limit is None:
-        # print_l('You want input depth or limit!')
-
         return
 
     elif depth is not None and limit is None:
         info = engine.analyse(board, chess.engine.Limit(depth=depth))
 
-        info['Hash'] = uci_conf['Hash']
-        info['MultiPV'] = uci_conf['MultiPV']
-
-        # print_l(str(info['score']))
+        analyze_antijit(info, uci_conf)
 
         return info['score']
 
     elif depth is None and limit is not None:
         info = engine.analyse(board, chess.engine.Limit(time=limit))
 
-        info['Hash'] = uci_conf['Hash']
-        info['MultiPV'] = uci_conf['MultiPV']
-
-        # print_l(str(info['score']))
+        analyze_antijit(info, uci_conf)
 
         return info['score']
 
-
+@jit
 def analyze_without_score(engine, board, depth: int = None, limit: int = None):
     if depth is None and limit is None:
         print_l('You want input depth or limit!')
@@ -82,23 +84,16 @@ def analyze_without_score(engine, board, depth: int = None, limit: int = None):
     elif depth is not None and limit is None:
         info = engine.analyse(board, chess.engine.Limit(depth=depth))
 
-        info['Hash'] = uci_conf['Hash']
-        info['MultiPV'] = uci_conf['MultiPV']
-
-        # print_l(str(info['score']))
+        analyze_antijit(info, uci_conf)
 
         return info['score']
 
     elif depth is None and limit is not None:
         info = engine.analyse(board, chess.engine.Limit(time=limit))
 
-        info['Hash'] = uci_conf['Hash']
-        info['MultiPV'] = uci_conf['MultiPV']
-
-        # print_l(str(info['score']))
+        analyze_antijit(info, uci_conf)
 
         return info
-
 
 def best_move(engine, board, depth: int = None, limit: int = None):
     weights_json = json.load(open("./weights/weights_norm.json", 'r'))
@@ -187,7 +182,6 @@ def create_new_move(filename):
     end_time = time.perf_counter()
 
     return end_time - start_time
-
 
 def train(engine, board):
     dictionary = {}  # or dict()
