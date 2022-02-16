@@ -2,3 +2,4 @@ chess
 colorama
 Nuitka
 rich
+numba
