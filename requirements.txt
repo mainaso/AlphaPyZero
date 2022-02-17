@@ -3,3 +3,4 @@ colorama
 Nuitka
 rich
 coloredlogs
+tqdm
