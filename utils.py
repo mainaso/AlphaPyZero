@@ -20,6 +20,11 @@ def print_l(msg, type="INFO"):
         logger.critical(msg)
         sys.exit(1)
 
+def create_file(name):
+    open(name, "w")
+
+    return open(name, "r")
+
 
 def new_board(old_board, fen: str = None):
     del old_board
