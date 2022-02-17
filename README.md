@@ -97,3 +97,8 @@ Here some screenshots:
 __Yes__. You can support the author by simply following his profile on *Lichess*: [click me](https://lichess.org/@/ProshkaKartoshka)!
 
 Have a nice day, good learning! 😉
+
+# 🤝 Thanks for contributing...
+
+Main developer - @WennMarcoRTX
+Project helper - @hanterHunt
