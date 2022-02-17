@@ -2,11 +2,12 @@ import chess
 import chess.engine
 from colorama import init, Fore
 
+import coloredlogs
 from rich.console import Console
 from rich.table import Table
+from tqdm import tqdm
 
 import logging
-import coloredlogs
 import json
 import re
 import random
@@ -120,10 +121,9 @@ def best_move(engine, board, depth: int = None, limit: int = None):
             return result.move
 
         else:
-            engin = Engine("stockfish", "./weights/weights_norm.json")
-            move = engin.go(calculate_time(depth=20))
+            result = engine.play(board, chess.engine.Limit(time=limit))
 
-            return move
+            return result.move
 
         return result.move
 
@@ -148,7 +148,7 @@ def create_new_move(filename):
     dict_moves = []
     dict_keys = []
 
-    for key in error_keys:
+    for key in tqdm(error_keys, desc="Generating weights"):
         board = chess.Board(dict_errors[key])
         score = analyze(engine=engine, board=board, depth=20)
         real_score = re.sub('\D', '', str(score))
@@ -188,7 +188,7 @@ def train(engine, board):
     start_time = time.perf_counter()
 
     while not board.is_game_over():
-        move = best_move(engine=engine, board=board, depth=random.randrange(10, 15))
+        move = best_move(engine=engine, board=board, limit=0.001)
         try:
             board.push(move)
 
@@ -236,41 +236,37 @@ def results_print(results_dict):
     console = Console()
     console.print(table)
 
-def start(engine):
-    now = datetime.datetime.now()
+def start(engine, g):
+    global path
+
     path = "./games/game" + str(random.randint(0, 1000000)) + '.json'
     b, _dictionary, elapsed = train(engine=engine, board=board)
-
-    if not str(b.result()) == '*':
-        print_l(
-            f'Game completed, result: {b.result()}. Time elapsed: {elapsed}')
 
     with open(path, "w") as write_file:
         json.dump(_dictionary, write_file)
 
-    elapsed_new_move = create_new_move(filename=path)
-
-    now = datetime.datetime.now()
-
-    print_l(f'Weights created. Time elapsed: {elapsed_new_move}')
-
     return b.result()
 
-
 if __name__ == '__main__':
-    show_intro() # showing intro 
-    
+    show_intro() # showing intro
+
     count_g = 0
 
-    while not count_g >= games_count_for_train:
-        count_g += 1
+    while True:
+        for _ in tqdm(range(0, games_count_for_train), desc="Self Play"):
+            count_g += 1
+            engine = chess.engine.SimpleEngine.popen_uci('stockfish')
+            resul = start(engine=engine, g=count_g)
+            engine.quit()
+
+            results_dictionary[str(count_g) + " " + str(resul)] = " "
+
+            with open('./games/results.json', "w") as results_diictionary:
+                json.dump(results_dictionary, results_diictionary)
+
         engine = chess.engine.SimpleEngine.popen_uci('stockfish')
-        resul = start(engine=engine)
+        create_new_move(filename=path)
         engine.quit()
 
-        results_dictionary[str(count_g) + " " + str(resul)] = " "
-
-        with open('./games/results.json', "w") as results_diictionary:
-            json.dump(results_dictionary, results_diictionary)
-
-    results_print(results_dict=results_dictionary)
+        results_print(results_dict=results_dictionary)
+        print()
