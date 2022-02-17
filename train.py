@@ -12,7 +12,8 @@ import json
 import re
 import random
 import time
-import datetime
+import os
+
 
 from engine import *
 from utils import *
@@ -270,3 +271,12 @@ if __name__ == '__main__':
 
         results_print(results_dict=results_dictionary)
         print()
+
+        os.system("rm games/*")
+        print_l("Games cleared!")
+        del results_dictionary
+        results_dictionary = json.load(create_file("results.json"))
+        print_l("New results created!")
+        print()
+
+        
