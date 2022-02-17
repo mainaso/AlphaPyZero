@@ -90,7 +90,7 @@ Very simple, but very productive. We improve our neural network almost every day
 
 Here some screenshots:
 
-![screenshot][https://imgur.com/q0abagj.png]
+![[screenshot](https://imgur.com/q0abagj.png)]
 
 # 😄 Can I support project?
 
