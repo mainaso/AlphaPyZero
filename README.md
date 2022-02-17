@@ -100,5 +100,6 @@ Have a nice day, good learning! 😉
 
 # 🤝 Thanks for contributing...
 
-Main developer - @WennMarcoRTX
-Project helper - @hanterHunt
+Main developer - [@WennMarcoRTX](https://github.com/WennMarcoRTX)
+
+Project helper - [@hanterHunt](https://github.com/hanterhunt)
