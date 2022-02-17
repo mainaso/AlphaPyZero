@@ -1,4 +1,4 @@
-import chess
+import chess #eng
 import chess.engine
 from colorama import init, Fore
 
