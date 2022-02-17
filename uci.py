@@ -30,6 +30,16 @@ def show_intro():
 
     print(intro)
 
+def if_havent_weights(dir):
+    dir_list = os.listdir(str(dir))
+    if dir_list == ["weights_norm.default.json"]:
+        print_l("""
+                    You want to rename "weights_norm.default.json"(in directory
+                    "weights") to "weights_norm.json".
+        
+        """, type="CRITICAL")
+
+
 
 def finding_weights():
     for f in os.listdir("./weights"):
@@ -78,7 +88,7 @@ def uci_commander(command):
 
     elif command.startswith('quit'):
         sys.exit(1)
-        
+
     elif command == "":
         pass
 
@@ -130,7 +140,7 @@ def uci_sys_comander(sys_argv, command, other):
 
     elif command.startswith('quit'):
         sys.exit()
-        
+
     elif command == "":
         pass
 
