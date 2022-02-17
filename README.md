@@ -98,8 +98,3 @@ __Yes__. You can support the author by simply following his profile on *Lichess*
 
 Have a nice day, good learning! 😉
 
-# 🤝 Thanks for contributing...
-
-Main developer - [@WennMarcoRTX](https://github.com/WennMarcoRTX)
-
-Project helper - [@hanterHunt](https://github.com/hanterhunt)
