@@ -2,8 +2,10 @@ import json
 
 import chess.engine
 
-from train import analyze, best_move
+import train
 from utils import *
+import coloredlogs
+coloredlogs.install(level='INFO')
 
 logger = logging.getLogger("MarcoEngineTraining")  
 board = chess.Board()
@@ -17,48 +19,48 @@ class Engine:
 	def go(self, depth: int = None):
 		if depth is None:
 			for deep in range(0, 101):
-				info = analyze(self.engine, board, deep)
-				result = best_move(self.engine, board, deep)
+				info = train.analyze(self.engine, board, deep)
+				result = train.best_move(self.engine, board, deep)
 
 				if str(board.fen()) in list(self.weights.values()):
 					result = get_key(self.weights, str(result))
 
-					print(f'Uses weight from fen: {board.fen()}')
-					print(str(info) + f' {deep} depth')
-					print(str(result))
+					print_l(f'Uses weight from fen: {board.fen()}')
+					print_l(str(info) + f' {deep} depth')
+					print_l(str(result))
 					print('\n'*3)
 
 				else:
-					print(str(board.fen()) + ' not in weights! Analyzing without weights...')
-					print(str(info) + f' {deep} depth')
-					print(str(result))
+					print_l(str(board.fen()) + ' not in weights! Analyzing without weights...')
+					print_l(str(info) + f' {deep} depth')
+					print_l(str(result))
 					print('\n'*3)
 
-				return result.move
+			return result
 
 
 		elif not depth is None:
-			print(str(list(self.weights.values())) + ' weights loaded!')
+			print_l(str(list(self.weights.values())) + ' weights loaded!')
 
 			for deep in range(0, depth + 1):
-				info = analyze(self.engine, board, deep)
-				result = best_move(self.engine, board, deep)
+				info = train.analyze(self.engine, board, deep)
+				result = train.best_move(self.engine, board, deep)
 
 				if str(board.fen()) in list(self.weights.values()):
 					result = get_key(self.weights, str(result))
 
-					print(f'Uses weight from fen: {board.fen()}')
-					print(str(info) + f' {deep} depth')
-					print(str(result))
+					print_l(f'Uses weight from fen: {board.fen()}')
+					print_l(str(info) + f' {deep} depth')
+					print_l(str(result))
 					print('\n'*3)
 
 				else:
-					print(str(board.fen()) + ' not in weights! Analyzing without weights...')
-					print(str(info) + f' {deep} depth')
-					print(str(result))
+					print_l(str(board.fen()) + ' not in weights! Analyzing without weights...')
+					print_l(str(info) + f' {deep} depth')
+					print_l(str(result))
 					print('\n'*3)
 
-				return result.move
+				return result
 
 
 			self.engine.quit()
