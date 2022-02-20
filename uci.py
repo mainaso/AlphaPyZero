@@ -16,6 +16,9 @@ board = chess.Board()
 engine = Engine("stockfish", "./weights/weights_norm.json")
 uci_conf = json.load(open('./settings/uci_config.json', 'r'))
 uci_conf2 = json.load(open('./settings/conf.json', 'r'))
+uci_default_conf = json.load(open('./settings/uci_default_config.json', 'r'))
+uci_min_conf = json.load(open('./settings/uci_min_config.json', 'r'))
+uci_max_conf = json.load(open('./settings/uci_max_config.json', 'r'))
 
 
 def show_intro():
@@ -51,20 +54,20 @@ def uci_commander(command):
     if command.startswith('go'):
         if len(command.split()) == 1:
             engine.go()
-            print_l('[+] Complete!')
+            print('[+] Complete!')
 
         else:
-            print_l('[-] Cannot parse command... ')
+            print('[-] Cannot parse command... ')
 
     elif command.startswith('uciok') or command == 'uci':
         for key in list(uci_conf2.keys()):
-            print_l(f"id {str(key)}  {uci_conf2[key]}")
+            print(f"id {str(key)}  {uci_conf2[key]}")
 
         for key in list(uci_conf.keys()):
-            type_option = str(type(uci_conf[str(key)]))
+            type_option = str(type(uci_default_conf[str(key)]))
             type_option = type_option.replace("<class '", "")
             type_option = type_option.replace("'>", "")
-            print_l(f"option name {str(key)} type {type_option} default {uci_conf[key]}")
+            print(f"option name {str(key)} type {type_option} default {uci_default_conf[key]} min {uci_min_conf[key]} max {uci_max_conf[key]}")
 
             del type_option
 
@@ -84,7 +87,7 @@ def uci_commander(command):
             board.push(move)
 
     elif command.startswith('isready'):
-        print_l('[+] Ready')
+        print('[+] Ready')
 
     elif command.startswith('quit'):
         sys.exit(1)
@@ -100,14 +103,14 @@ def uci_sys_comander(sys_argv, command, other):
     if command.startswith('go'):
         if len(command.split()) == 1:
             engine.go()
-            print_l('[+] Complete!')
+            print('[+] Complete!')
 
         else:
-            print_l('[-] Cannot parse command... ')
+            print('[-] Cannot parse command... ')
 
     elif command.startswith('uciok') or command == 'uci':
         for key in list(uci_conf2.keys()):
-            print_l(f"id {str(key)}  {uci_conf2[key]}")
+            print(f"id {str(key)}  {uci_conf2[key]}")
 
         for key in list(uci_conf.keys()):
             type_option = str(type(uci_conf[str(key)]))
@@ -136,7 +139,7 @@ def uci_sys_comander(sys_argv, command, other):
             board.push(Move.from_uci(move))
 
     elif command.startswith('isready'):
-        print_l('[+] Ready')
+        print('[+] Ready')
 
     elif command.startswith('quit'):
         sys.exit()
