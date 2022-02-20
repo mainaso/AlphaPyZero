@@ -96,7 +96,7 @@ def uci_commander(command):
         pass
 
     else:
-        print_l(f'[?] Unkown command: {command}')
+        print(f'[?] Unkown command: {command}')
 
 
 def uci_sys_comander(sys_argv, command, other):
@@ -116,7 +116,7 @@ def uci_sys_comander(sys_argv, command, other):
             type_option = str(type(uci_conf[str(key)]))
             type_option = type_option.replace("<class '", "")
             type_option = type_option.replace("'>", "")
-            print_l(f"option name {str(key)} type {type_option} default {uci_conf[key]}")
+            print(f"option name {str(key)} type {type_option} default {uci_conf[key]}")
 
             del type_option
 
@@ -148,7 +148,7 @@ def uci_sys_comander(sys_argv, command, other):
         pass
 
     else:
-        print_l(f'[?] Unkown command: {command}')
+        print(f'[?] Unkown command: {command}')
 
 
 if sys.argv == ['uci.py'] or sys.argv == ['./uci.bin'] or sys.argv == ['./marcoengine.bon']:
