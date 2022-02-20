@@ -1,4 +1,4 @@
-import chess #eng
+import chess
 import chess.engine
 from colorama import init, Fore
 
@@ -206,7 +206,7 @@ def train(engine, board):
 
     return board, dictionary, end_time - start_time
 
-def results_print(results_dict):
+def results_print(i, results_dict):
     draws = 0
     wins_w = 0
     wins_b = 0
@@ -225,12 +225,13 @@ def results_print(results_dict):
 
     table = Table(title="Train results")
 
+    table.add_column("Iteration", justify="right", style="cyan", no_wrap=True)
     table.add_column("Played games", justify="right", style="cyan", no_wrap=True)
     table.add_column("Wins white", style="magenta")
     table.add_column("Losses white", style="magenta")
     table.add_column("Draws", style="magenta")
 
-    table.add_row(str(len(results_dict.keys())), str(wins_w), str(wins_b), str(draws))
+    table.add_row(str(i), str(len(results_dict.keys())), str(wins_w), str(wins_b), str(draws))
 
 
 
@@ -252,8 +253,11 @@ if __name__ == '__main__':
     show_intro() # showing intro
 
     count_g = 0
+    iteration = 0
 
     while True:
+        iteration += 1
+        
         for _ in tqdm(range(0, games_count_for_train), desc="Self Play"):
             count_g += 1
             engine = chess.engine.SimpleEngine.popen_uci('stockfish')
@@ -269,13 +273,13 @@ if __name__ == '__main__':
         create_new_move(filename=path)
         engine.quit()
 
-        results_print(results_dict=results_dictionary)
+        results_print(i=iteration, results_dict=results_dictionary)
         print()
 
         os.system("rm games/*")
         print_l("Games cleared!")
         del results_dictionary
-        results_dictionary = json.load(create_file("results.json"))
+        results_dictionary = json.load(create_file("games/results.json"))
         print_l("New results created!")
         print()
 
