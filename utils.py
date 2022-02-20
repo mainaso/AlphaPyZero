@@ -21,7 +21,8 @@ def print_l(msg, type="INFO"):
         sys.exit(1)
 
 def create_file(name):
-    open(name, "w")
+    a = open(name, "w")
+    a.write('{}')
 
     return open(name, "r")
 
