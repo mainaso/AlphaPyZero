@@ -113,10 +113,10 @@ def uci_sys_comander(sys_argv, command, other):
             print(f"id {str(key)}  {uci_conf2[key]}")
 
         for key in list(uci_conf.keys()):
-            type_option = str(type(uci_conf[str(key)]))
+            type_option = str(type(uci_default_conf[str(key)]))
             type_option = type_option.replace("<class '", "")
             type_option = type_option.replace("'>", "")
-            print(f"option name {str(key)} type {type_option} default {uci_conf[key]}")
+            print(f"option name {str(key)} type {type_option} default {uci_default_conf[key]} min {uci_min_conf[key]} max {uci_max_conf[key]}")
 
             del type_option
 
