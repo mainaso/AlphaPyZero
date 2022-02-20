@@ -4,10 +4,15 @@
     <h2>Python chess neural network</h2>
 </div>
 
+[![Join the chat at https://gitter.im/WennMarcoRTX/MarcoEngine](https://badges.gitter.im/WennMarcoRTX/MarcoEngine.svg)](https://gitter.im/WennMarcoRTX/MarcoEngine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
+*Marco Engine* - Marco Engine is an interesting neural chess network that uses a self-learning method (achieving a good game by trying out mistakes). Technically, her rating is **3320**. Although, we are sure that this is not the maximum rating.
+=======
 <div id="badges" align="center">
     
 [![forthebadge made-with-python](http://ForTheBadge.com/images/badges/made-with-python.svg)](https://www.python.org/)
  
+
 
 [![Gitter](https://badges.gitter.im/DroidGame/DroidGame3D.svg)](https://gitter.im/WennMarcoRTX/MarcoEngine?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=body_badge)    
     
