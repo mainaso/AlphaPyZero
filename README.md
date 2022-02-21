@@ -25,7 +25,7 @@
 *Marco Engine* is an interesting neural chess network that uses a self-learning method (achieving a good game by trying out mistakes). Technically, his rating is **3463**. Although, we are sure that this is not the maximum rating.
 
 
-# Installation
+# ↓ Installation
 
 First, install the required *libraries*:
 
@@ -35,7 +35,7 @@ pip install -r requirements.txt
 
 Wait for the modules to be installed. Now, you need to set the weights. You can find out more about this in the __Where I can download weights?__ section.
 
-# Start engine
+# 🚗 Start engine
 
 To run the engine, you must have weights. If you don't have weights, you can create a `weights_norm.json` file in the __weights__ folder. After that, go to the main directory of the project, then write the command:
 
@@ -49,7 +49,7 @@ After that, wait the amount of time you need, and turn off the program. Congratu
 python3 uci.py [uci-command](not necessary)
 ```
 
-# I want to build engine
+# 🏗️ I want to build engine
 If you need to compile the engine, you can use the __build.sh__ file. Just type in terminal:
 
 ```bash
@@ -60,7 +60,7 @@ Then wait, and everything will be ready.
 
 *IMPORTANT!!! The compilation is not yet fully tested, and there may be interruptions in work, for which we apologize ...*
 
-# Where I can download weights?
+# 🖥️ Where I can download weights?
 You can get the weights in two ways: 
 1. Download from one of the releases of __MarcoEngine__ (they will be in this repository), then transfer the weights file to the `weights` folder. Next, read the text under the heading __Start engine__ to understand how to start the engine. 
 
@@ -72,7 +72,7 @@ python3 train.py
 
 Then wait some time for the training program to reach at least the first stage of weights. You can either continue the program to train, or just turn it off. After that, your path lies in the __Start engine__ header, where you will be shown how to start the engine.
 
-# How does Marco Engine work?
+# ⚙️ How does Marco Engine work?
 
 Marco Engine is a completely different engine from other chess neural networks. It doesn't use any neurons, synapses, or anything like that. This engine is very simple, from its side, when the program starts, it looks like this:
 
@@ -82,25 +82,14 @@ Marco Engine is a completely different engine from other chess neural networks. 
 
 Very simple, but very productive. We improve our neural network almost every day, we hope that something good will come out.
 
-# MarcoEngine UCI-protocol
+# 📝 MarcoEngine UCI-protocol
 | ***Command*** | go | uciok(AKA: uci) | ucinewgame | position fen [fen] | position startpos moves [moves] | isready | quit |
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | ***About*** | Analyzing position | Gives about UCI settings | Starts new game with new board | Creates new board with inputed fen | Sets moves to new board | Hey! MEngine, you ready? | Exit from MarcoEngine |
 
-## UCI options
-
-Currently, MarcoEngine has the following UCI options:
-
-  * #### Hash
-    The size of the hash table in MB. It is recommended to set Hash after setting Threads.
-
-  * #### MultiPV
-    Output the N best lines (principal variations, PVs) when searching.
-    Leave at 1 for best performance.
-
-# Can I support project?
+# 😄 Can I support project?
 
 __Yes__. You can support the author by simply following his profile on *Lichess*: [click me](https://lichess.org/@/ProshkaKartoshka)!
 
-Have a nice day, good learning!
+Have a nice day, good learning! 😉
 
