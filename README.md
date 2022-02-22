@@ -89,7 +89,7 @@ Very simple, but very productive. We improve our neural network almost every day
 
 # 😄 Can I support project?
 
-__Yes__. You can support the author by simply following his profile on *Lichess*: [click me](https://lichess.org/@/ProshkaKartoshka)!
+__Yes__. You can support the author by simply following his profile on *Lichess*: [click me](https://lichess.org/@/ProshkaKartoshka/)!
 
 Have a nice day, good learning! 😉
 
