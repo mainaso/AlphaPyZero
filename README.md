@@ -87,12 +87,6 @@ Very simple, but very productive. We improve our neural network almost every day
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | ***About*** | Analyzing position | Gives about UCI settings | Starts new game with new board | Creates new board with inputed fen | Sets moves to new board | Hey! MEngine, you ready? | Exit from MarcoEngine |
 
-# 😄 Can I support project?
-
-__Yes__. You can support the author by simply following his profile on *Lichess*: [click me](https://lichess.org/@/ProshkaKartoshka/)!
-
-Have a nice day, good learning! 😉
-
 <div id="contacts" align="center">
     <br/>
     <h1>📩 Contact us!</h1>
@@ -103,7 +97,5 @@ Have a nice day, good learning! 😉
         <img src="https://raw.githubusercontent.com/WennMarcoRTX/MarcoEngine/main/logo_social_github.png" width="3%"/>
     </a>
     <img width="3%" />
-    <a href="https://lichess.org/@/ProshkaKartoshka">
-        <img src="https://raw.githubusercontent.com/WennMarcoRTX/MarcoEngine/main/lichess_social_logo.jpg" width="3%"/>
-    </a>
+
 </div>
