@@ -102,6 +102,8 @@ Have a nice day, good learning! 😉
     <a href="https://github.com/WennMarcoRTX">
         <img src="https://raw.githubusercontent.com/WennMarcoRTX/MarcoEngine/main/logo_social_github.png" width="3%"/>
     </a>
-    
-    
+    <img width="3%" />
+    <a href="https://lichess.org/@/ProshkaKartoshka">
+        <img src="https://raw.githubusercontent.com/WennMarcoRTX/MarcoEngine/main/lichess_social_logo.jpg" width="3%"/>
+    </a>
 </div>
