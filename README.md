@@ -95,7 +95,7 @@ Have a nice day, good learning! 😉
 
 <div id="contacts" align="center">
     <br/>
-    <h1>Contact us!</h1>
+    <h1>📩 Contact us!</h1>
 </div>
 
 <div align="center">
