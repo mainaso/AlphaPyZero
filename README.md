@@ -93,3 +93,13 @@ __Yes__. You can support the author by simply following his profile on *Lichess*
 
 Have a nice day, good learning! 😉
 
+<div id="contacts" align="center">
+    <br/>
+    <h1>Contact us!</h1>
+</div>
+
+<div align="center">
+    <a href="https://github.com/WennMarcoRTX">
+        <img src="https://raw.githubusercontent.com/WennMarcoRTX/MarcoEngine/main/logo_social_github.png" width="3%"/>
+    </a>
+</div>
