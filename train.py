@@ -260,7 +260,7 @@ if __name__ == '__main__':
         
         for _ in tqdm(range(0, games_count_for_train), desc="Self Play"):
             count_g += 1
-            engine = chess.engine.SimpleEngine.popen_uci('stockfish')
+            engine = chess.engine.SimpleEngine.popen_uci('./stockfish')
             resul = start(engine=engine, g=count_g)
             engine.quit()
 
