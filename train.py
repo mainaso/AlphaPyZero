@@ -176,7 +176,7 @@ def create_new_move(filename):
         dict_norm[str(move)] = fens[dict_moves.index(_move)]
 
     with open('./weights/weights_norm.json', 'w') as weights_file:
-        json.dump(dict_norm, weights_file)
+        json.dump(dict_norm, weights_file, indent=4)
 
     end_time = time.perf_counter()
 
