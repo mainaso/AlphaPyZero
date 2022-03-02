@@ -52,12 +52,8 @@ def finding_weights():
 
 def uci_commander(command):
     if command.startswith('go'):
-        if len(command.split()) == 1:
             engine.go()
             print('[+] Complete!')
-
-        else:
-            print('[-] Cannot parse command... ')
 
     elif command.startswith('uciok') or command == 'uci':
         for key in list(uci_conf2.keys()):
@@ -101,12 +97,8 @@ def uci_commander(command):
 
 def uci_sys_comander(sys_argv, command, other):
     if command.startswith('go'):
-        if len(command.split()) == 1:
             engine.go()
             print('[+] Complete!')
-
-        else:
-            print('[-] Cannot parse command... ')
 
     elif command.startswith('uciok') or command == 'uci':
         for key in list(uci_conf2.keys()):
@@ -151,7 +143,7 @@ def uci_sys_comander(sys_argv, command, other):
         print(f'[?] Unkown command: {command}')
 
 
-if sys.argv == ['uci.py'] or sys.argv == ['./uci.bin'] or sys.argv == ['./marcoengine.bon']:
+if sys.argv == [sys.argv[0]]:
     show_intro()
 
     while True:
