@@ -26,13 +26,13 @@ class Engine:
 					result = get_key(self.weights, str(result))
 
 					print_l(f'Uses weight from fen: {board.fen()}')
-					print_l(str(info) + f' {deep} depth')
+					print_l(str(info) + f' | {deep} depth')
 					print_l(str(result))
 					print('\n'*3)
 
 				else:
 					print_l(str(board.fen()) + ' not in weights! Analyzing without weights...')
-					print_l(str(info) + f' {deep} depth')
+					print_l(str(info) + f' | {deep} depth')
 					print_l(str(result))
 					print('\n'*3)
 
@@ -50,13 +50,13 @@ class Engine:
 					result = get_key(self.weights, str(result))
 
 					print_l(f'Uses weight from fen: {board.fen()}')
-					print_l(str(info) + f' {deep} depth')
+					print_l(str(info) + f' | {deep} depth')
 					print_l(str(result))
 					print('\n'*3)
 
 				else:
 					print_l(str(board.fen()) + ' not in weights! Analyzing without weights...')
-					print_l(str(info) + f' {deep} depth')
+					print_l(str(info) + f' | {deep} depth')
 					print_l(str(result))
 					print('\n'*3)
 
