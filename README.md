@@ -91,6 +91,15 @@ Very simple, but very productive. We improve our neural network almost every day
     <h1>📩 Contact us!</h1>
 </div>
 
+# MarcoEngine(57438423 games) vs Stockfish 14.1(NNUE)
+
+| ***Result*** | win | lose | draw
+| ***MarcoEngine*** | 224 | 18 | 27
+| :---: | | :---: | | :---: | | :---: |
+| ***Stockish*** | 18 | 224 | 27 |
+
+You can see [proofs](https://lichess.org/@/WennDieSoldatBOT/search?source=3&mode=0&players.a=wenndiesoldatbot&sort.field=d&sort.order=desc).
+
 <div align="center">
     <a href="https://github.com/WennMarcoRTX">
         <img src="https://raw.githubusercontent.com/WennMarcoRTX/MarcoEngine/main/logo_social_github.png" width="3%"/>
