@@ -95,7 +95,7 @@ Very simple, but very productive. We improve our neural network almost every day
 
 | ***Result*** | win | lose | draw
 | ***MarcoEngine*** | 224 | 18 | 27
-| :---: | | :---: | | :---: | | :---: |
+| :---: | :---: | :---: | :---: |
 | ***Stockish*** | 18 | 224 | 27 |
 
 You can see [proofs](https://lichess.org/@/WennDieSoldatBOT/search?source=3&mode=0&players.a=wenndiesoldatbot&sort.field=d&sort.order=desc).
