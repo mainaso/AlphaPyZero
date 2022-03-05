@@ -13,7 +13,7 @@ init(autoreset=True)
 weights = []
 
 board = chess.Board()
-engine = Engine("stockfish", "./weights/weights_norm.json")
+engine = Engine("stockfish", "weights/weights_norm.json")
 uci_conf = json.load(open('./settings/uci_config.json', 'r'))
 uci_conf2 = json.load(open('./settings/conf.json', 'r'))
 uci_default_conf = json.load(open('./settings/uci_default_config.json', 'r'))
@@ -35,9 +35,10 @@ def show_intro():
 
 def if_havent_weights(dir):
     dir_list = os.listdir(str(dir))
-    if dir_list == ["weights_norm.default.json"]:
+    print(dir_list)
+    if dir_list == ["weights_norm.json"]:
         print_l("""
-                    You want to rename "weights_norm.default.json"(in directory
+                    You want to rename "weights_norm.json"(in directory
                     "weights") to "weights_norm.json".
         
         """, type="CRITICAL")
@@ -145,6 +146,7 @@ def uci_sys_comander(sys_argv, command, other):
 
 if sys.argv == [sys.argv[0]]:
     show_intro()
+    if_havent_weights('./weights')
 
     while True:
         com = input()
@@ -152,6 +154,7 @@ if sys.argv == [sys.argv[0]]:
 
 else:
     show_intro()
+
 
     sys_argv = sys.argv[1:]
 
