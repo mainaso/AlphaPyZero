@@ -93,7 +93,8 @@ Very simple, but very productive. We improve our neural network almost every day
 
 # MarcoEngine(57438423 games) vs Stockfish 14.1(NNUE)
 
-| ***Result*** | win | lose | draw |
+| ***Result*** | wins | loses | draws |
+| :---: | :---: | :---: | :---: |
 | ***MarcoEngine*** | 224 | 18 | 27 |
 | :---: | :---: | :---: | :---: |
 | ***Stockish*** | 18 | 224 | 27 |
