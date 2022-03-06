@@ -14,6 +14,7 @@
 [![by mN!](https://img.shields.io/badge/By-MarcoNIT-brown.svg)](https://github.com/WennMarcoRTX)
 [![its uci :)](https://img.shields.io/badge/UCI-engine-blue.svg)](https://en.wikipedia.org/wiki/Universal_Chess_Interface)
 
+[![Python](https://github.com/WennMarcoRTX/MarcoEngine/actions/workflows/python-app.yml/badge.svg)](https://github.com/WennMarcoRTX/MarcoEngine/actions/workflows/python-app.yml)
     
 [![Linux](https://svgshare.com/i/Zhy.svg)](https://svgshare.com/i/Zhy.svg)
 [![Windows](https://svgshare.com/i/ZhY.svg)](https://svgshare.com/i/ZhY.svg)
