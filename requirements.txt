@@ -1,4 +1,4 @@
-chess==1.7.0
+chess
 colorama
 Nuitka
 rich
