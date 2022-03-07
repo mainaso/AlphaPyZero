@@ -87,14 +87,7 @@ Very simple, but very productive. We improve our neural network almost every day
 | :---: | :---: | :---: | :---: | :---: | :---: | :---: | :---: |
 | ***About*** | Analyzing position | Gives about UCI settings | Starts new game with new board | Creates new board with inputed fen | Sets moves to new board | Hey! MEngine, you ready? | Exit from MarcoEngine |
 
-# 🆚 MarcoEngine(57438423 games) vs Stockfish 14.1(NNUE)
 
-| ***Result*** | wins | loses | draws |
-| :---: | :---: | :---: | :---: |
-| ***MarcoEngine*** | 258 | 19 | 27 |
-| ***Stockish*** | 19 | 258 | 27 |
-
-You can see [proofs](https://lichess.org/@/WennDieSoldatBOT/search?source=3&mode=0&players.a=wenndiesoldatbot&sort.field=d&sort.order=desc).
 
 <div id="contacts" align="center">
     <br/>
