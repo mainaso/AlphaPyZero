@@ -23,7 +23,7 @@
 
 # Table of contents
 - [Downloading](#downloading)
-- [Config changes](#config changes)
+- [Config changes](#configchanges)
 
 # Downloading
 To clone directory write in CMD, or another terminal:
