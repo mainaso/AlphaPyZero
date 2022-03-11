@@ -21,6 +21,10 @@
 </div>
 *AlphaZero* - chess engine, who learn from it's erros. Official AlphaZero is not source, but I create my own AlphaZero. 
 
+# Table of contents
+- [Downloading](#downloading)
+- [Config changes](#config changes)
+
 # Downloading
 To clone directory write in CMD, or another terminal:
 
