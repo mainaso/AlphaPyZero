@@ -1,0 +1,2 @@
+python-chess
+tensorflow  #Tensorflow 2, not 1
