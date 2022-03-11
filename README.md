@@ -24,7 +24,7 @@
 # Table of contents
 - [Downloading](#downloading)
 - [Config changes](#config-changes)
-- - [Where is config?](#where-is-config)
+  - [Where is config?](#where-is-config)
 
 # Downloading
 To clone directory write in CMD, or another terminal:
