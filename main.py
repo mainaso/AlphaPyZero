@@ -10,7 +10,7 @@ from utils import *
 
 import sys
 
-log = logging.getLogger(__name__)
+log = logging.getLogger(__name__) # logger
 
 coloredlogs.install(level='INFO')  # Change this to DEBUG to see more info.
 
