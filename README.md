@@ -19,6 +19,7 @@
 [![macOS](https://svgshare.com/i/ZjP.svg)](https://svgshare.com/i/ZjP.svg)
     
 </div>
+
 *AlphaZero* - chess engine, who learn from it's erros. Official AlphaZero is not source, but I create my own AlphaZero. 
 
 # Table of contents
