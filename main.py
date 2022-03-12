@@ -1,14 +1,14 @@
-import logging
+# Importing
+import logging  # logger
 
-import coloredlogs
-
-from Coach import Coach
-from localchess.ChessGame import ChessGame as Game
-from localchess.keras.NNet import NNetWrapper as nn
+import coloredlogs # colored logs
+ 
+from Coach import Coach # coach of nn
+from localchess.ChessGame import ChessGame as Game # chess logic
+from localchess.keras.NNet import NNetWrapper as nn # neural net
 from utils import *
 
-
-import sys
+import sys # sys
 
 log = logging.getLogger(__name__) # logger
 
