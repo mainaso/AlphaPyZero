@@ -62,3 +62,9 @@ Config starts on [17th](./main.py#17) line in the [main file](./main.py).
 - **load_model**. Loads model?
 - **load_folder_file**. Directory to load file.
 - **numItersForTrainExamplesHistory**. Number of iterations in train examples.
+
+<div id="alphazeropy" align="center">
+    <br/>
+    <h1>Contact us!</h1>
+</div>
+
