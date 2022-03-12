@@ -1,3 +1,5 @@
+# For play
+
 import Arena
 from MCTS import MCTS
 from localchess.ChessGame import ChessGame
@@ -9,7 +11,7 @@ import numpy as np
 from utils import *
 
 """
-use this script to play any two agents against each other, or play manually with
+Use this script to play any two agents against each other, or play manually with
 any agent.
 """
 
