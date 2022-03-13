@@ -1,17 +1,17 @@
-import logging #logger
-import os
-import sys
-from collections import deque
-from pickle import Pickler, Unpickler
-from random import shuffle
+import logging # logger
+import os # operation system
+import sys # system
+from collections import deque # "deque"
+from pickle import Pickler, Unpickler # pickler
+from random import shuffle # randomizer
 
-import numpy as np
-from tqdm import tqdm
+import numpy as np # numpy's arrays
+from tqdm import tqdm # better cycles
 
-from Arena import Arena
-from MCTS import MCTS
+from Arena import Arena # Arena playing
+from MCTS import MCTS # NN
 
-log = logging.getLogger(__name__)
+log = logging.getLogger(__name__) # logger variable
 
 
 class Coach():
