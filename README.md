@@ -68,3 +68,15 @@ Config starts on [17th](./main.py#17) line in the [main file](./main.py).
     <h1>Contact us!</h1>
 </div>
 
+
+<div align="center">
+    <a href="https://github.com/WennMarcoRTX">
+        <img src="./logo_social_github.png" width="3%"/>
+    </a>
+    <img width="3%" />
+    <a href="https://lichess.org/@/ProshkaKartoshka">
+        <img src="./logo_social_lichess.jpg" width="3%"/>
+    </a>
+    <img width="3%" />
+
+</div>
